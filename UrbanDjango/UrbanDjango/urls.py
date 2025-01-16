@@ -16,11 +16,18 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path,include
+from task4.views import platform, games, cart
 
 urlpatterns = [
-path('admin/', admin.site.urls),
-path('task2/', include('task2.urls')),
-path('task3/', include('task3.urls')),
+    path('admin/', admin.site.urls),
+    path('platform/', platform, name='platform'),
+    path('games/', games, name='games'),
+    path('cart/', cart, name='cart'),
+    path('task2/', include('task2.urls')),  # Маршруты для task2
+    path('task3/', include('task3.urls')),  # Маршруты для task3
+
 ]
+
+
 
