@@ -18,16 +18,24 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from task4.views import platform, games, cart
+from task5.views import sign_up_by_django, sign_up_by_html
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('platform/', platform, name='platform'),
+
     path('games/', games, name='games'),
     path('cart/', cart, name='cart'),
     path('task2/', include('task2.urls')),  # Маршруты для task2
     path('task3/', include('task3.urls')),  # Маршруты для task3
-
+    path('', sign_up_by_django, name='sign_up_by_django'),
+    path('django_sign_up/', sign_up_by_html, name='sign_up_by_html'),
 ]
+
+
+
+
+
 
 
 
